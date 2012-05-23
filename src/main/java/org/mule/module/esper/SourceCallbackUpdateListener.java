@@ -796,6 +796,7 @@ public class SourceCallbackUpdateListener implements UpdateListener {
     // ToDo Figure out how to deal with newEvents vs. oldEvents intelligently
     public void update(EventBean[] newEvents, EventBean[] oldEvents) {
 
+        logger.debug(String.format("Received %d new events and %d old events", newEvents.length, oldEvents.length));
         /*
         ToDo this should probably be made configurable, giving the user the option to return a NullPayload
         instead of suppressing null events.
