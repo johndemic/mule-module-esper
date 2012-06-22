@@ -820,6 +820,7 @@ public class SourceCallbackUpdateListener implements UpdateListener {
 
         for (EventBean event : newEvents) {
             try {
+                logger.debug("Processing received event: " + event);
                 sourceCallback.process(event.getUnderlying());
             } catch (Exception e) {
                 logger.error("Could not process event: " + event, e);
