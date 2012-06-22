@@ -1,4 +1,7 @@
 org.mule.module.esper
+org.mule.module.esper.adapters
 org.mule.module.esper.config
 org.mule.module.esper.config.spring
+org.mule.module.esper.processors
+org.mule.module.esper.sources
 
