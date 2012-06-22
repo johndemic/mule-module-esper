@@ -5,15 +5,15 @@
     <parent>
         <groupId>org.mule.tools.devkit</groupId>
         <artifactId>mule-devkit-parent</artifactId>
-        <version>3.2</version>
+        <version>3.3.0</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.mule.module.esper</groupId>
-    <artifactId>esper-connector</artifactId>
+    <artifactId>esper-module</artifactId>
     <version>1.1-SNAPSHOT</version>
     <packaging>mule-module</packaging>
-    <name>Mule Esper Connector</name>
+    <name>Mule Esper Module</name>
 
     <dependencies>
         <dependency>

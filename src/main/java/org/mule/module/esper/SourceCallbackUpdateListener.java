@@ -778,7 +778,6 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.mule.api.callback.SourceCallback;
 
-
 /**
  * <code>UpdateListener</code> implementation that invokes the <code>SourceCallback</code> facilitate the
  * dispatch of events as they are read off the event stream.
@@ -796,7 +795,20 @@ public class SourceCallbackUpdateListener implements UpdateListener {
     // ToDo Figure out how to deal with newEvents vs. oldEvents intelligently
     public void update(EventBean[] newEvents, EventBean[] oldEvents) {
 
-        logger.debug(String.format("Received %d new events and %d old events", newEvents.length, oldEvents.length));
+        if (logger.isDebugEnabled()) {
+            int newEventSize = 0;
+            int oldEventSize = 0;
+
+            if (newEvents != null) {
+                newEventSize = newEvents.length;
+            }
+
+            if (oldEvents != null) {
+                oldEventSize = oldEvents.length;
+            }
+
+            logger.debug(String.format("Received %d new events and %d old events", newEventSize, oldEventSize));
+        }
         /*
         ToDo this should probably be made configurable, giving the user the option to return a NullPayload
         instead of suppressing null events.
