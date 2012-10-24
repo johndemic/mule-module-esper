@@ -857,7 +857,7 @@ public class EsperModule implements MuleContextAware {
      * @param eventPayload The event to be injected into the event stream.
      * @param eventName    The name of the event in the case of a <code>Map</code> payload.
      */
-    @Processor
+    @Processor(name="send")
     public void send(Object eventPayload, @Optional String eventName) {
         logger.debug(String.format("Sending event %s to stream", eventPayload));
 
@@ -906,7 +906,7 @@ public class EsperModule implements MuleContextAware {
      * @param key          the key of the result to evaluate from the query
      * @param afterChain   the <code>SourceCallback</code>
      */
-    @Processor(intercepting = true)
+    @Processor(intercepting = true, name="filter")
     public synchronized void filter(@Optional Object eventPayload, String statement, String key,
                                     SourceCallback afterChain) {
 
