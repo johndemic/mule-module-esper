@@ -773,10 +773,6 @@
  */
 package org.mule.module.esper;
 
-import com.espertech.esper.client.*;
-import org.apache.commons.lang.StringUtils;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.mule.api.ConnectionException;
 import org.mule.api.MuleContext;
 import org.mule.api.annotations.Configurable;
@@ -786,13 +782,25 @@ import org.mule.api.annotations.Source;
 import org.mule.api.annotations.param.Optional;
 import org.mule.api.callback.SourceCallback;
 import org.mule.api.context.MuleContextAware;
-import org.w3c.dom.Node;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
+import com.espertech.esper.client.Configuration;
+import com.espertech.esper.client.EPServiceProvider;
+import com.espertech.esper.client.EPServiceProviderManager;
+import com.espertech.esper.client.EPStatement;
+import com.espertech.esper.client.EventBean;
+import com.espertech.esper.client.SafeIterator;
+
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
+import org.apache.commons.lang.StringUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.w3c.dom.Node;
 
 /**
  * A Mule Module for <a href="http://esper.codehaus.org/">Esper</a>, a GPL licensed complex event processing
@@ -947,5 +955,9 @@ public class EsperModule implements MuleContextAware {
             safeIterator.close();
         }
 
+    }
+
+    public String getConfiguration() {
+        return configuration;
     }
 }
