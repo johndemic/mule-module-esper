@@ -14,6 +14,12 @@
         <version>3.4.0</version>
     </parent>
 
+    <properties>
+        <licensePath>LICENSE.md</licensePath>
+        <category>Community</category>
+        <devkit.studio.package.skip>false</devkit.studio.package.skip>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.mule.modules</groupId>
