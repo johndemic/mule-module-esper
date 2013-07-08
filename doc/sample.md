@@ -20,7 +20,7 @@ In order to build and run this project you'll need
 
 If you haven't installed Mule Studio on your computer yet, it's time to download Mule Studio from this location: [http://www.mulesoft.org/download-mule-esb-community-edition](http://www.mulesoft.org/download-mule-esb-community-edition). You also have the option of downloading a 30 day trial of Mule Enterprise Edition from this location [http://www.mulesoft.com/mule-esb-enterprise](http://www.mulesoft.com/mule-esb-enterprise) if you want to evaluate and purchase the premium edition. This demo can be built using either community or enterprise edition. There is no specific installation that you need to run. Once you unzip the zip file to your desired location, you are ready to go. To install the Esper Module, you can download and install it from MuleStudio Cloud Connectors Update Site. To do that:
 
-1. Open Mule Studio and from "Help" menu select "Install New Software...". Installation dialog box opens - Figure 4.
+1. Open Mule Studio and from "Help" menu select "Install New Software...". Installation dialog box opens.
 
 2. From "Work with" drop down, select "MuleStudio Cloud Connectors Update Site". The list of available connectors will be shown to you.
 
@@ -29,8 +29,6 @@ If you haven't installed Mule Studio on your computer yet, it's time to download
 4. When you are done selecting the connectors to be installed, click on "Next" button. Details of each connector are shown on the next page. Click on "Next" button again and accept the terms of the license agreement.
 
 5. Click on "Finish" button. The connector is downloaded and installed onto Studio. You'll need to restart the Studio for the installation to be completed.
-
-![](images/image004.jpg)  
   
   
 **Setting up the project**
