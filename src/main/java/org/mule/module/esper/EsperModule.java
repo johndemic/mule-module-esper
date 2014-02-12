@@ -46,7 +46,7 @@ import org.w3c.dom.Node;
  *
  * @author John D'Emic <john.demic@mulesoft.com>
  */
-@Module(name = "esper", schemaVersion = "1.0", poolable = false, minMuleVersion="3.3")
+@Module(name = "esper", schemaVersion = "1.0", poolable = false, minMuleVersion="3.3", friendlyName = "Esper")
 public class EsperModule implements MuleContextAware {
 
     protected transient Log logger = LogFactory.getLog(getClass());
