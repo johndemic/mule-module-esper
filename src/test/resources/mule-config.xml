@@ -32,7 +32,7 @@
         http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/3.2/mule-xml.xsd
         http://www.mulesoft.org/schema/mule/esper http://www.mulesoft.org/schema/mule/esper/1.0/mule-esper.xsd">
 
-    <esper:config name="esper" configuration="esper-config.xml"/>
+        <esper:config name="esper" configuration="esper-config.xml"/>
 
     <flow name="testFlow">
         <vm:inbound-endpoint path="in"/>
@@ -79,8 +79,10 @@
     <flow name="Event Rate Limit Flow">
         <vm:inbound-endpoint path="filtered.in"/>
         <esper:filter config-ref="esper" eventPayload-ref="#[payload:]"
-                      statement="select case when count(*) > 3 then false else true end from TestEvent.win:time(5 min)"
-                      key="case when count(*)>3 then false else true end"/>
+                statement="select case when count(*) > 3 then false else true end from TestEvent.win:time(5 min)"
+                      key="case when (count(*))>3 then false else true end" />
+
+              <!-- key="case when count(*)>3 then false else true end"/> -->
         <vm:outbound-endpoint path="filtered.out"/>
     </flow>
 
